@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    
+      <ion-buttons slot="start">
+          <ion-menu-button color="primary" menu="primerMenu"></ion-menu-button>
+      </ion-buttons> 
+
+    <ion-title>micuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-card>
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+          <ion-col>
+              <ion-card-header>
+                  <ion-avatar>
+                      <img src="./../../../assets/images/profile.png">
+                  </ion-avatar>
+                  <ion-card-subtitle>@Nombre</ion-card-subtitle>
+              </ion-card-header>
+          </ion-col>
+          <ion-col size="8">
+              <ion-card-subtitle>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero culpa hic velit sed explicabo totam dicta et labore veritatis animi cupiditate, vitae minus. Quia, enim. Modi ut aliquid odit similique.
+              </ion-card-subtitle>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+      <ion-row class="ion-justify-content-center">
+          <ion-col size="5">
+              <ion-buttons>
+                  <ion-button fill="clear">
+                      <ion-icon name="logo-facebook" color="primary" value="facebookLink"></ion-icon>
+                  </ion-button>
+                  <ion-button fill="clear">
+                      <ion-icon name="logo-twitter" color="primary" value="twitterLink"></ion-icon>
+                  </ion-button>
+                  <ion-button fill="clear">
+                      <ion-icon name="logo-instagram" color="primary" value="instagramLink"></ion-icon>
+                  </ion-button>
+              </ion-buttons>
+
+          </ion-col>
+
+          <ion-col size="7" class="ion-justify-content-start">
+              <ion-buttons>
+                  <ion-button [fill]="valorBotonSeguir" (click)="seguir()" shape="round" color="primary">
+                      <ion-icon name="walk"></ion-icon>
+                      <ion-label slot="end">Seguir</ion-label>
+                  </ion-button>
+                  <ion-button fill="outline" shape="round" color="primary">
+                      <ion-icon name="mail"></ion-icon>
+                      <ion-label slot="end">Mens..</ion-label>
+                  </ion-button>
+              </ion-buttons>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-card>
+
+
+<ion-content class="ion-padding">
+
+  <ion-segment (ionChange)="valorSegment($event)" value="terrapiasSegment">
+      <ion-segment-button value="terrapiasSegment" checked>
+          <ion-label>Terrapias</ion-label>
+          <ion-label>
+              <h1>3</h1>
+          </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="seguidoresSegment">
+          <ion-label>Seguidores</ion-label>
+          <ion-label>
+              <h1>34</h1>
+          </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="siguiendoSegment">
+          <ion-label>Siguiendo</ion-label>
+          <ion-label>
+              <h1>25</h1>
+          </ion-label>
+      </ion-segment-button>
+
+  </ion-segment>
+  <br>
+  <ion-label color="medium" *ngIf="activarSegmentTerrapias">
+      <h2><strong>Mis Árboles: </strong></h2>
+  </ion-label>
+  <app-mis-terrapias *ngIf="activarSegmentTerrapias"></app-mis-terrapias>
+  <br>
+  <ion-label color="medium" *ngIf="activarSegmentTerrapias">
+      <h2><strong>Terrapias en las que has participado: </strong></h2>
+  </ion-label>
+  <app-mis-terrapias *ngIf="activarSegmentTerrapias"></app-mis-terrapias>
+
+
+</ion-content>

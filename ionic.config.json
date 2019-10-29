@@ -1,0 +1,7 @@
+{
+  "name": "terrapia",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
